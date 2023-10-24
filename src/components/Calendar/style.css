@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+.wrapper {
+  flex: 0 0 70%;
+}
+.color-cell-1 {
+  fill: #acd5f2;
+}
+.color-cell-2 {
+  fill: #7fa8c9;
+}
+.color-cell-3 {
+  fill: #527ba0;
+}
+.color-cell-4 {
+  fill: #254e77;
+}
