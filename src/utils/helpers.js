@@ -1,12 +1,28 @@
-import { parseISO } from "date-fns";
+import { parseISO, format, addDays } from "date-fns";
 
 export function TransformData(dates) {
-  const transformedData = Object.keys(dates).map((date) => {
-    return {
-      date: parseISO(date),
-      count: dates[date],
-    };
-  });
+  const dateKeys = Object.keys(dates);
+
+  if (dateKeys.length === 0) {
+    return [];
+  }
+
+  dateKeys.sort();
+
+  const transformedData = [];
+  let currentDate = parseISO(dateKeys[0]);
+  const endDate = parseISO(new Date().toISOString());
+
+  while (currentDate <= endDate) {
+    const currentDateISO = format(currentDate, "yyyy-MM-dd");
+    const count = dates[currentDateISO] || 0;
+    transformedData.push({
+      date: currentDateISO,
+      count: count,
+    });
+
+    currentDate = addDays(currentDate, 1);
+  }
   return transformedData;
 }
 export function GenerateClassByCount(count) {

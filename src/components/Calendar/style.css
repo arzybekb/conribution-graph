@@ -17,3 +17,37 @@
 .color-cell-4 {
   fill: #254e77;
 }
+.hint-container {
+  display: flex;
+  align-items: center;
+}
+.hint-paragraph {
+  color: #959494;
+  font-size: 15px;
+}
+.more {
+  margin-left: 10px;
+}
+.less {
+  margin-right: 10px;
+}
+.cell {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+.cell-empty {
+  background-color: #eeeeee;
+}
+.cell-1 {
+  background-color: #acd5f2;
+}
+.cell-2 {
+  background-color: #7fa8c9;
+}
+.cell-3 {
+  background-color: #527ba0;
+}
+.cell-4 {
+  background-color: #254e77;
+}

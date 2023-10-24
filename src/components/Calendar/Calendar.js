@@ -7,6 +7,7 @@ import { monthsInRussian, weekDaysInRussian } from "../../utils/constants";
 import { GenerateClassByCount, shiftDateBack } from "../../utils/helpers";
 import { Tooltip } from "react-tooltip";
 import { format } from "date-fns";
+import Hint from "./Hint";
 
 const today = new Date();
 
@@ -38,10 +39,14 @@ function Calendar({ data }) {
               "data-tooltip-id": "my-tooltip",
               "data-tooltip-content": `${`${
                 value.count
-              } contributions on ${format(value.date, "MMMM d, yyyy")}`} `,
+              } contributions on ${format(
+                new Date(value.date),
+                "MMMM d, yyyy"
+              )}`} `,
             };
           }}
         />
+        <Hint />
         <Tooltip id="my-tooltip" />
       </div>
     </div>
