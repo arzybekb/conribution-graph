@@ -1,6 +1,7 @@
 import React from "react";
 import CalendarHeatmap from "react-calendar-heatmap";
 import "react-calendar-heatmap/dist/styles.css";
+import "react-tooltip/dist/react-tooltip.css";
 import "./style.css";
 import { monthsInRussian, weekDaysInRussian } from "../../utils/constants";
 import { GenerateClassByCount, shiftDateBack } from "../../utils/helpers";
@@ -14,7 +15,7 @@ function Calendar({ data }) {
     <div className="container">
       <div className="wrapper">
         <CalendarHeatmap
-          startDate={shiftDateBack(today, -365)}
+          startDate={shiftDateBack(today, -357)}
           endDate={today}
           values={data}
           classForValue={(value) => {
